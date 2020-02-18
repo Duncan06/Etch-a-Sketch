@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+    <title>Etch-a-Sketch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id = "refresh" onclick = "refresh()"> Reset board.</button>
+    <div class = "gameboard"></div>
+</body>
+
+<script>
+    let tiles = 16;
+    let amount = 0;
+    const gameboard = document.querySelector('.gameboard');
+
+    while (amount < tiles) {
+        makesquares = document.createElement('div');
+        makesquares.classList.add("start");
+        gameboard.appendChild(makesquares);
+        amount += 1;
+    }
+
+    let squares = document.querySelectorAll('.start');
+    squares.forEach(e => e.addEventListener('mouseover', () => {
+                event.target.classList.add("wentover");
+        })
+    );
+
+    function refresh(gameboard) {
+        marked = document.querySelectorAll('.wentover');
+        marked.forEach(e => e.classList.toggle('wentover'));
+    }
+
+</script>

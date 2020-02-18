@@ -1,0 +1,18 @@
+.gameboard{
+    display:flex;
+    border: solid black;
+    height: 10vh;
+    flex-wrap: wrap;
+}
+
+.start{
+    flex: 1;
+    border: black;
+    width: 25%;
+    border-style: solid;
+    background-color: white;
+}
+
+.wentover{
+    background-color: black;
+}
