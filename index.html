@@ -9,13 +9,34 @@
 </body>
 
 <script>
-    let tiles = 16;
+    let tiles = 27;
     let amount = 0;
+    let square = Math.sqrt(tiles);
+    let dimensions = ((square/tiles) * 100) - 1.34;
+    
+    // let styles = `
+    //     .start {
+    //         flex: 1 0 ${dimensions};
+    //         border: black;
+    //         padding: 0;
+    //         margin: 0;
+    //         width: calc(100%/${tiles});
+    //         height: calc(100%/${tiles};
+    //         border-style: solid;
+    //         background-color: white;
+    //     }`
+    // let styleSheet = document.createElement('style');
+    // styleSheet.type = "text/css";
+    // styleSheet.innerText = styles;
+    // document.head.appendChild(styleSheet);
     const gameboard = document.querySelector('.gameboard');
 
     while (amount < tiles) {
         makesquares = document.createElement('div');
         makesquares.classList.add("start");
+        makesquares.style.width = `${dimensions}%`;
+        makesquares.style.height = `${dimensions}%`;
+        // makesquares.style.flex = `0 0 ${dimensions}%`;
         gameboard.appendChild(makesquares);
         amount += 1;
     }
