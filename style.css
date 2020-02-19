@@ -4,7 +4,6 @@
 
 .gameboard{
     display:flex;
-    border: solid black;
     height: 50vh;
     max-width: 25%;
     flex-wrap: wrap;
