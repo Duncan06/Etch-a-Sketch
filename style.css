@@ -4,9 +4,8 @@
 
 .gameboard{
     display:flex;
-    height: 50vh;
-    max-width: 25%;
-    flex-wrap: wrap;
+    height: 75vh;
+    max-width: 33%;
     border: solid black;
     justify-content: center;
     align-content: center;
@@ -15,14 +14,15 @@
 
 .rows{
     flex: auto;
+    height: 100%;
     display: flex;
-    flex-grow: 1;
-    justify-content: center;
+    flex-direction: column;
     flex-wrap: wrap;
 }
 
 .start{
     border: black;
+    border-width: .1em;
     flex-grow: 1;
     padding: 0;
     margin: 0;

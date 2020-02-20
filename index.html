@@ -12,6 +12,7 @@
 <script>
     let tileprompt = window.prompt("Please enter the width or height of the tiles you'd like.");
     let tiles = tileprompt*tileprompt;
+    let rowdim = 100/tileprompt;
     let dimensions = 100/tiles;
     
     // let styles = `
@@ -33,16 +34,16 @@
     let row = 0;
     rows = document.createElement('div');
     rows.classList.add("rows");
+    rows.style.width = `${rowdim}%`;
 
     for (let amount= 0; amount < tiles; amount++) {
         makesquares = document.createElement('div');
         makesquares.classList.add("start");
-        makesquares.style.width = `${dimensions}%`;
-        makesquares.style.height = `${dimensions}%`;
         if (row % tileprompt == 0 && row != 0){
             gameboard.appendChild(rows);
             rows = document.createElement('div');
             rows.classList.add("rows");
+            rows.style.width = `${rowdim}%`;
             row = 0;
         }
         if (amount == tiles - 1){
