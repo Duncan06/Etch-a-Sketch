@@ -7,13 +7,23 @@
     height: 50vh;
     max-width: 25%;
     flex-wrap: wrap;
+    border: solid black;
     justify-content: center;
     align-content: center;
     margin: auto;
 }
 
+.rows{
+    flex: auto;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .start{
     border: black;
+    flex-grow: 1;
     padding: 0;
     margin: 0;
     border-style: solid;

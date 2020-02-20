@@ -12,8 +12,7 @@
 <script>
     let tileprompt = window.prompt("Please enter the width or height of the tiles you'd like.");
     let tiles = tileprompt*tileprompt;
-    let square = Math.sqrt(tiles);
-    let dimensions = ((square/tiles) * 100) - 1.34;
+    let dimensions = 100/tiles;
     
     // let styles = `
     //     .start {
@@ -31,13 +30,31 @@
     // styleSheet.innerText = styles;
     // document.head.appendChild(styleSheet);
     const gameboard = document.querySelector('.gameboard');
+    let row = 0;
+    rows = document.createElement('div');
+    rows.classList.add("rows");
 
     for (let amount= 0; amount < tiles; amount++) {
         makesquares = document.createElement('div');
         makesquares.classList.add("start");
         makesquares.style.width = `${dimensions}%`;
         makesquares.style.height = `${dimensions}%`;
-        gameboard.appendChild(makesquares);
+        if (row % tileprompt == 0 && row != 0){
+            gameboard.appendChild(rows);
+            rows = document.createElement('div');
+            rows.classList.add("rows");
+            row = 0;
+        }
+        if (amount == tiles - 1){
+            rows.appendChild(makesquares);
+            gameboard.appendChild(rows);
+            break;
+        }
+        else {
+            row++;
+        }
+        rows.appendChild(makesquares);
+
     }
 
     let squares = document.querySelectorAll('.start');
