@@ -61,6 +61,7 @@
     let squares = document.querySelectorAll('.start');
     squares.forEach(e => e.addEventListener('mouseover', () => {
                 event.target.classList.add("wentover");
+                event.target.style.backgroundColor = `rgba(${random()}, ${random()}, ${random()}, 1)`;
         })
     );
 
@@ -71,6 +72,10 @@
 
     function reset() {
         location.reload();
+    }
+
+    function random() {
+        return rvalue = Math.floor((Math.random()*255));
     }
 
 </script>
