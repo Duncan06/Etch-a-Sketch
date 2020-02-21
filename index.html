@@ -62,12 +62,14 @@
     squares.forEach(e => e.addEventListener('mouseover', () => {
                 event.target.classList.add("wentover");
                 event.target.style.backgroundColor = `rgba(${random()}, ${random()}, ${random()}, 1)`;
+                brightness(event.target);
         })
     );
 
     function refresh(gameboard) {
         marked = document.querySelectorAll('.wentover');
         marked.forEach(e => e.classList.toggle('wentover'));
+        marked.forEach(e => e.style.opacity = '0');
     }
 
     function reset() {
@@ -78,4 +80,11 @@
         return rvalue = Math.floor((Math.random()*255));
     }
 
+    function brightness(e) {
+        let styles = window.getComputedStyle(e);
+        let current = styles.getPropertyValue('opacity');
+        let now = parseFloat(current);
+        now += .1;
+        return e.style.opacity = `${now}`;
+    }
 </script>
